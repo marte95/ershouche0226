@@ -23,6 +23,7 @@ export default {
 					name: 'buy',
 					meta: { column: 'buy' },
 					component: SideLayout, // 左侧栏布局组件，放三级路由
+					// 访问buy页面，自动跳转到当前路由
 					redirect: { 'name': 'large-scale-car-selection' },
 					// 循环映射出路由的配置项（返回一个JSON对象）
 					children: buyRoute.children.map(item => ({

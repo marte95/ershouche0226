@@ -17,6 +17,7 @@
                     </Sider>
                     <Content :style="{padding:'24px', minHeight: '280px', background: '#fff'}">
                         <!-- 三级路由的内容 -->
+                        <h1>{{$store.state.routerStore.column}}</h1>
                         <router-view></router-view>
                     </Content>
                 </Layout>
