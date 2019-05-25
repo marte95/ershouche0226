@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header>
-            <Menu mode="horizontal" theme="dark" active-name="1">
+            <Menu mode="horizontal" theme="dark" active-name="1" @on-select="changeMenu">
                 <div class="layout-logo">
                     <a href="/index">
                         <img src="http://aiqianduan.com/assets/images/logo.png" width="170">
@@ -43,7 +43,11 @@
 
 <script>
     export default {
-        
+        methods: {
+            changeMenu(name){
+                this.$router.push({name})
+            }
+        }
     }
 </script>
 <style scoped>
