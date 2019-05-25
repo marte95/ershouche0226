@@ -22,7 +22,11 @@ const store = new Vuex.Store(storeConfig)
 router.afterEach((to, from)=>{
     console.log(to)
     // 告诉store我切换了路由，每个路由的meta都有一个column属性，声明着路由的名称
-    store.commit('routerStore/changeColumn', { column: to.meta.column})
+    store.commit('routerStore/changeColumn', { 
+      column: to.meta.column, 
+      scolumn: to.meta.scolumn, 
+      scolumnc: to.meta.scolumnc 
+    })
 })
 
 Vue.config.productionTip = false

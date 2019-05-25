@@ -29,7 +29,11 @@ export default {
 					children: buyRoute.children.map(item => ({
 						path: item.en,
 						name: item.en,
-						meta: { column: 'buy' },
+						meta: { 
+							column: 'buy',
+							scolumn: item.en,  //侧边栏（三级路由）的英文名称
+							scolumnc: item.cn, //面包屑导航的中文名称
+						},
 						component: item.co
 					}))
 				},
@@ -49,7 +53,11 @@ export default {
 					children: transferRoute.children.map(item=>({
 						path: item.en,
 						name: item.en,
-						meta: { column: 'transfer' },
+						meta: { 
+							column: 'transfer',
+							scolumn: item.en,
+							scolumnc: item.cn, 
+						},
 						component: item.co
 					}))
 				},

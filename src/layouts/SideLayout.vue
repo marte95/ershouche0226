@@ -9,15 +9,18 @@
             <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
                 <Layout>
                     <Sider hide-trigger :style="{background: '#fff'}">
-                        <Menu active-name="1-1" theme="light" width="auto" :open-names="['1']">
-                            <MenuItem name="1-1">Option 1</MenuItem>
-                            <MenuItem name="1-2">Option 2</MenuItem>
-                            <MenuItem name="1-3">Option 3</MenuItem>
+                        <Menu theme="light" width="auto" :open-names="['1']"
+                            :active-name="$store.state.routerStore.scolumn"
+                            @on-select="changeMenu"
+                        >
+                            <MenuItem v-for="item in getTheOne.children" :name="item.en"  :key="item.en">
+                                {{item.cn}}
+                            </MenuItem>
                         </Menu>
                     </Sider>
                     <Content :style="{padding:'24px', minHeight: '280px', background: '#fff'}">
                         <!-- 三级路由的内容 -->
-                        <h1>{{$store.state.routerStore.column}}</h1>
+                        <h1>{{$store.state.routerStore}}</h1>
                         <router-view></router-view>
                     </Content>
                 </Layout>
@@ -27,8 +30,28 @@
 </template>
 
 <script>
+    import buyRoute from "../router/buyRoute.js"
+    import transferRoute from "../router/transferRoute.js"
+
+    // 路由对象名称
+    const obj = {
+        buy: buyRoute,
+        transfer: transferRoute
+    }
+    
     export default {
-        
+        computed: {
+            // 动态获取当前栏目的路由对象
+            getTheOne(){
+               return obj[this.$store.state.routerStore.column]
+            }
+        },
+        methods: {
+            // 切换三级路由
+            changeMenu(name){
+                this.$router.push({name})
+            }
+        }
     }
 </script>
 
