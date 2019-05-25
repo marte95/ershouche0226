@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<h1>{{$store.state.testStore.a}}</h1>
+		<!-- Layout布局路由 -->
+		<router-view></router-view>
 	</div>
 </template>
 
