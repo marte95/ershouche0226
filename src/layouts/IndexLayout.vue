@@ -3,7 +3,9 @@
         <Header>
             <Menu mode="horizontal" theme="dark" active-name="1">
                 <div class="layout-logo">
-                    <a href="/index"><img src="http://aiqianduan.com/assets/images/logo.png"></a>
+                    <a href="/index">
+                        <img src="http://aiqianduan.com/assets/images/logo.png" width="170">
+                    </a>
                 </div>
                 <div class="layout-nav">
                     <MenuItem name="index">
@@ -45,25 +47,43 @@
     }
 </script>
 <style scoped>
-.layout-logo{
-    width: 170px;
-    height: 30px;
-    background: #5b6270;
-    border-radius: 3px;
-    float: left;
-    position: relative;
-    top: 7px;
-    left: 20px;
-}
-.layout-logo img{
-    width: 100%;
-}
-.layout-nav{
-    width: 720px;
-    margin: 0 auto;
-    margin-right: 20px;
-}
-.layout-footer-center{
-    text-align: center;
-}
+    .layout{
+        border: 1px solid #d7dde4;
+        background: #f5f7f9;
+        position: relative;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .layout-logo{
+        width: 100px;
+        height: 30px;
+        border-radius: 3px;
+        float: left;
+        position: relative;
+        top: 10px;
+        left: 20px;
+    }
+    .layout-nav{
+        width: 750px;
+        margin: 0 auto;
+        margin-right: 20px;
+    }
+    .layout-footer-center{
+        text-align: center;
+    }
+    .ivu-layout-header{
+        background: -webkit-linear-gradient(left top, #137dba, #77cbd7b0 20%, #5a6ce3);
+    }
+    .ivu-menu-dark{
+        background: transparent;
+    }
+    .ivu-menu-dark.ivu-menu-horizontal .ivu-menu-item-active{
+        background-color: gold;
+    }
+    .ivu-menu-item{
+        font-size:18px;
+    }
+    .ivu-menu-dark.ivu-menu-horizontal .ivu-menu-item{
+        color:#fff;
+    }
 </style>
