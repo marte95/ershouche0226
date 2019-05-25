@@ -77,6 +77,9 @@ export default {
 					path: '*', redirect: { 'name': 'index' }
 				}
 			]
+		},
+		{
+			path: '*', redirect: { path: '/index/index' }
 		}
 	]
 }

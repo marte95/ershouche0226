@@ -2,9 +2,19 @@
     <div>
         <Layout>
             <Breadcrumb :style="{margin: '16px'}">
-                <BreadcrumbItem>Home</BreadcrumbItem>
-                <BreadcrumbItem>Components</BreadcrumbItem>
-                <BreadcrumbItem>Layout</BreadcrumbItem>
+                <BreadcrumbItem>
+                    <router-link to="/index/index">首页</router-link>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                    <router-link :to="'/index/' + getTheOne.columnEnglish">
+                        {{getTheOne.columnChinese}}
+                    </router-link>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                    <router-link :to="'/index/' + $store.state.routerStore.scolumn">
+                        {{$store.state.routerStore.scolumnc}}
+                    </router-link>
+                </BreadcrumbItem>
             </Breadcrumb>
             <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
                 <Layout>
@@ -21,6 +31,7 @@
                     <Content :style="{padding:'24px', minHeight: '280px', background: '#fff'}">
                         <!-- 三级路由的内容 -->
                         <h1>{{$store.state.routerStore}}</h1>
+                        {{getTheOne}}
                         <router-view></router-view>
                     </Content>
                 </Layout>
