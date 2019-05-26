@@ -1,10 +1,10 @@
-import testStore from "./testStore"
 import routerStore from "./routerStore"
+import carpicStore from "./CarpicStore"
 
 export default {
     modules: {
-        testStore,
-        routerStore
+        routerStore,
+        carpicStore
     }
 }
 
